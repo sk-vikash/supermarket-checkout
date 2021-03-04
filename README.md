@@ -11,18 +11,14 @@ For demonstration purpose, a CSV file `data.json` is present inside directroy /s
 * Maven (3.5.4)
 * Open JDK 1.8
 
-## Installation
-
-Clone the repository. Execute the Maven install goal to build the target .jar file.
-
 ## Technologies Used
 
-* Open Java 1.8
+* Java
 * Spring dependency
 * Maven
 * Jetbrains IntelliJ IDEA CE
 
-## Operation
+## Operation and Installation
 
 The service operation is normally automated but can be manually operated
 
