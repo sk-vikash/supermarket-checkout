@@ -40,7 +40,7 @@ public class UserInput {
           check = false;
           break;
         } else {
-          System.out.println("Invalid input ... Try again ... ");
+          System.out.println("Invalid input.... Try again.... ");
           continue;
         }
       }
@@ -51,8 +51,8 @@ public class UserInput {
     return items;
   }
 
-  protected boolean isNumeric(String str) {
-    return (str == null || str.length() == 0) ? false : str.chars().allMatch(Character::isDigit);
+  protected boolean isNumeric(String strNum) {
+    return (strNum == null || strNum.length() == 0) ? false : strNum.chars().allMatch(Character::isDigit);
   }
 
 }

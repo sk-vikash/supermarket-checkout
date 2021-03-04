@@ -13,35 +13,35 @@ public class PriceCalculator {
 
   public int aggregateTotalPriceOfItem() throws FileNotFoundException {
     UserInput userInput = new UserInput();
-    Map<String, Integer> items = userInput.acceptUserInput(); //this line get stuck
-    int total_bill = 0;
+    Map<String, Integer> items = userInput.acceptUserInput();
+    int totalBill = 0;
     if (items.get("A") != null) {
       Item itemA = new ItemA(items.get("A").intValue());
       itemA = new Offer(itemA);
       System.out.println("A(" + items.get("A").intValue() +") cost = " + itemA.cost());
-      total_bill = itemA.cost();
+      totalBill = itemA.cost();
     }
 
     if (items.get("B") != null) {
       Item itemB = new ItemB(items.get("B").intValue());
       itemB = new Offer(itemB);
       System.out.println("B(" + items.get("B").intValue() +") cost = " + itemB.cost());
-      total_bill = total_bill + itemB.cost();
+      totalBill = totalBill + itemB.cost();
     }
 
     if (items.get("C") != null) {
       Item itemC = new ItemC(items.get("C").intValue());
       itemC = new Offer(itemC);
       System.out.println("C(" + items.get("C").intValue() +") cost = " + itemC.cost());
-      total_bill = total_bill + itemC.cost();
+      totalBill = totalBill + itemC.cost();
     }
 
     if (items.get("D") != null) {
       Item itemD = new ItemD(items.get("D").intValue());
       itemD = new Offer(itemD);
       System.out.println("D(" + items.get("D").intValue() +") cost = " + itemD.cost());
-      total_bill = total_bill + itemD.cost();
+      totalBill = totalBill + itemD.cost();
     }
-    return total_bill;
+    return totalBill;
   }
 }

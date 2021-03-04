@@ -8,7 +8,7 @@ public class SkuClient {
 
   public static void main(String[] args) throws FileNotFoundException {
     PriceCalculator priceCalculator = new PriceCalculator();
-    System.out.println("Total Bill = " + priceCalculator.aggregateTotalPriceOfItem());
+    System.out.println("Total bill = " + priceCalculator.aggregateTotalPriceOfItem());
   }
 
 }
