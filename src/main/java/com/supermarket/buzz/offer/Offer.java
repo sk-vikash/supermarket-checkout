@@ -12,7 +12,6 @@ public class Offer extends Item {
     this.item = item;
   }
 
-
   @Override
   public int cost() throws FileNotFoundException {
     return new SpecialOfferCalculator().calculatePriceOfItem(item.totalItemPurchased(),

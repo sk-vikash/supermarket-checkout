@@ -35,7 +35,7 @@ public abstract class Item {
    * @throws FileNotFoundException Ref https://mkyong.com/java/how-to-read-and-parse-csv-file-in-java/#opencsv---convert-csv-file-to-object
    */
   public Map<String, StockKeepingUnit> getStockKeepingUnitDetails() throws FileNotFoundException {
-    Map<String, StockKeepingUnit> stringListMap = null;
+    Map<String, StockKeepingUnit> stockKeepingUnitMap = null;
     Gson gson = new Gson();
     File directory = new File("src/main/resources/data.json");
     String fileName = directory.getAbsolutePath();
@@ -43,10 +43,10 @@ public abstract class Item {
     List<StockKeepingUnit> stockKeepingUnitList = gson
         .fromJson(reader, new TypeToken<List<StockKeepingUnit>>() {
         }.getType());
-    stringListMap = new HashMap<>();
+    stockKeepingUnitMap = new HashMap<>();
     for (StockKeepingUnit stockKeepingUnits : stockKeepingUnitList) {
-      stringListMap.put(stockKeepingUnits.getItemName(), stockKeepingUnits);
+      stockKeepingUnitMap.put(stockKeepingUnits.getItemName(), stockKeepingUnits);
     }
-    return stringListMap;
+    return stockKeepingUnitMap;
   }
 }
