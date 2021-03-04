@@ -2,10 +2,9 @@
 
 ## Overview
 
-Repo contains java application for a supermarket checkout that calculates the total price of a
-number of items with and without discount given.
+Repo contains java application for a supermarket checkout that calculates the total price for a number of items with and without discount given.
 
-A CSV file `data.json` present inside /src/main/resources contains detail of individual unit.
+For demonstration purpose, a CSV file `data.json` is present inside directroy /src/main/resources containing detail of individual unit.
 
 ## Requirements
 
@@ -14,7 +13,7 @@ A CSV file `data.json` present inside /src/main/resources contains detail of ind
 
 ## Installation
 
-Checkout or fork the repository. Execute the Maven install goal to build the target .jar file.
+Clone the repository. Execute the Maven install goal to build the target .jar file.
 
 ## Technologies Used
 
@@ -31,4 +30,5 @@ The service operation is normally automated but can be manually operated
 * Execute `mvn sortpom:sort` to sort the pom.xml
 * Execute `mvn clean compile package` to generate the jar artifacts.
 * Execute `java -jar target/sku-mgmt-1.0-SNAPSHOT.jar` from the command line to run the application.
+* Execute `mvn test` for test coverage and check `index.html` generate inside `target` directory 
 
