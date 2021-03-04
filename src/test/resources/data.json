@@ -1,0 +1,22 @@
+[
+  {
+    "itemName": "A",
+    "actualPrice": 50,
+    "numberOfItemEligibleForDiscount": 3,
+    "discountedPrice": 130
+  },
+  {
+    "itemName": "B",
+    "actualPrice": 30,
+    "numberOfItemEligibleForDiscount": 2,
+    "discountedPrice": 45
+  },
+  {
+    "itemName": "C",
+    "actualPrice": 20
+  },
+  {
+    "itemName": "D",
+    "actualPrice": 15
+  }
+]

@@ -11,7 +11,6 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-//@SpringBootTest(classes=PriceCalculator.class)
 public class PriceCalculatorTest {
 
   private ByteArrayInputStream byteArrayInputStream;
@@ -48,7 +47,7 @@ public class PriceCalculatorTest {
 
     int price = priceCalculator.aggregateTotalPriceOfItem();
 
-    assertThat("The item price when single item is purchased",
+    assertThat("The item price when single item A is purchased",
         price, is(
             equalTo(130)));
   }

@@ -47,19 +47,19 @@ public class UserInputTest {
     provideInput(input);
 
     Map<String, Integer> acceptUserInputMap = userInput.acceptUserInput();
-    assertThat("The entered user input item A should match with actual",
+    assertThat("The entered user input for item A should match with actual",
         acceptUserInputMap.get("A"), is(
             equalTo(9)));
 
-    assertThat("The entered user input item B should match with actual",
+    assertThat("The entered user input for item B should match with actual",
         acceptUserInputMap.get("B"), is(
             equalTo(10)));
 
-    assertThat("The entered user input item C should match with actual",
+    assertThat("The entered user input for item C should match with actual",
         acceptUserInputMap.get("C"), is(
             equalTo(3)));
 
-    assertThat("The entered user input item D should match with actual",
+    assertThat("The entered user input for item D should match with actual",
         acceptUserInputMap.get("D"), is(
             equalTo(5)));
   }
@@ -73,7 +73,8 @@ public class UserInputTest {
 
     provideInput(input);
     Map<String, Integer> acceptUserInputMap = userInput.acceptUserInput();
-    assertThat("The entered invalid number of item",
+    assertThat(
+        "The entered invalid number of item then application should ignore the invalid input",
         acceptUserInputMap.get("A"), is(
             equalTo(2)));
   }
@@ -87,7 +88,11 @@ public class UserInputTest {
     provideInput(input);
     Map<String, Integer> acceptUserInputMap = userInput.acceptUserInput();
     assertThat(
-        "The user entered invalid item then application should user re-enter the item correctly",
+        "The user entered an invalid item then application have only one item in the cart",
+        acceptUserInputMap.size(), is(
+            equalTo(1)));
+    assertThat(
+        "The user entered an invalid item then application should user re-enter the item correctly",
         acceptUserInputMap.get("D"), is(
             equalTo(4)));
   }
@@ -96,8 +101,26 @@ public class UserInputTest {
   public void givenUserHasToPurchaseItemFromUnitThenUserEnteredInCorrectOptionToPurchaseAnotherItemFromConsole() {
     UserInput userInput = new UserInput();
     String input = "B" + System.lineSeparator() + "2" + System.lineSeparator() + "X3%$"
-        + System.lineSeparator() + "B" + System.lineSeparator() + "8" + System.lineSeparator()
-        + "No";
+        + System.lineSeparator() + "No";
+
+    provideInput(input);
+    Map<String, Integer> acceptUserInputMap = userInput.acceptUserInput();
+    assertThat("The entered user input should match with the item entered",
+        acceptUserInputMap.get("B"), is(
+            equalTo(2)));
+  }
+
+  @Test
+  public void givenUserHasToPurchaseItemFromUnitThenUserEnteredMultipleInCorrectOptionToPurchaseAnotherItemFromConsole() {
+    UserInput userInput = new UserInput();
+    String input = "B" + System.lineSeparator() + "2" + System.lineSeparator() + "X3%$"
+        + System.lineSeparator() + "X3$" + System.lineSeparator() + "XXX" + System.lineSeparator()
+        + "234342"
+        + System.lineSeparator() + "Yes"
+        + System.lineSeparator() + "B" + System.lineSeparator() + "4" + System.lineSeparator()
+        + "Yes"
+        + System.lineSeparator() + "B" + System.lineSeparator() + "4" + System.lineSeparator()
+        + "NO";
 
     provideInput(input);
     Map<String, Integer> acceptUserInputMap = userInput.acceptUserInput();
@@ -121,29 +144,6 @@ public class UserInputTest {
             false));
     assertThat("The entered user input should match with the item entered",
         userInput.isNumeric(null), is(
-            false));
-  }
-
-  @Test
-  public void givenAInputFromConsoleThenCheckIfEnteredDetailsIsEitherYesOrNo() {
-    UserInput userInput = new UserInput();
-    assertThat("The entered user input for number of item should be valid if it is number",
-        userInput.isValidInput("Yes"), is(
-            true));
-    assertThat("The entered user input should match with the item entered",
-        userInput.isValidInput("yEs"), is(
-            true));
-    assertThat("The entered user input should match with the item entered",
-        userInput.isValidInput("No"), is(
-            true));
-    assertThat("The entered user input should match with the item entered",
-        userInput.isValidInput(null), is(
-            false));
-    assertThat("The entered user input should match with the item entered",
-        userInput.isValidInput("null"), is(
-            false));
-    assertThat("The entered user input should match with the item entered",
-        userInput.isValidInput("X5R"), is(
             false));
   }
 }

@@ -13,7 +13,7 @@ public class ItemDTest {
   ItemD itemD = new ItemD(11);
 
   @Test
-  public void givenNumberOfItemPurchasedFromByUserThenSameNumberOfItemShouldBeAdded() {
+  public void givenNumberOfItemDPurchasedByUserThenSameNumberOfItemShouldBeAdded() {
     assertThat("The number of Item purchased D should match",
         itemD.itemPurchased, is(
             equalTo(11)));

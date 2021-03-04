@@ -18,7 +18,7 @@ public class OfferTest {
   public void givenItemAIsPurchasedWhenDiscountIsAppliedOnTheItem() throws FileNotFoundException {
     Item item = new ItemA(4);
     Offer offer = new Offer(item);
-    assertThat("The price of Item purchased A should match",
+    assertThat("The price of Item purchased A should match and discount should be applied",
         offer.cost(), is(
             equalTo(180)));
   }
@@ -27,7 +27,7 @@ public class OfferTest {
   public void givenItemBIsPurchasedWhenDiscountIsAppliedOnTheItem() throws FileNotFoundException {
     Item item = new ItemB(3);
     Offer offer = new Offer(item);
-    assertThat("The price of Item purchased B should match",
+    assertThat("The price of Item purchased B should match and discount should be applied",
         offer.cost(), is(
             equalTo(75)));
   }
